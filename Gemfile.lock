@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/bcardarella/client_side_validations.git
+  revision: f3af3edec178d0c6f90024a9b1ec48428799ec94
+  specs:
+    client_side_validations (3.1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -74,6 +80,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  client_side_validations!
   jquery-rails
   rails (= 3.0.9)
   sqlite3

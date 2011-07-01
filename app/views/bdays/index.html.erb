@@ -1,0 +1,23 @@
+<h1>Listing bdays</h1>
+
+<table>
+  <tr>
+    <th>My date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bdays.each do |bday| %>
+  <tr>
+    <td><%= bday.my_date %></td>
+    <td><%= link_to 'Show', bday %></td>
+    <td><%= link_to 'Edit', edit_bday_path(bday) %></td>
+    <td><%= link_to 'Destroy', bday, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bday', new_bday_path %>

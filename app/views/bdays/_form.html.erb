@@ -1,0 +1,29 @@
+<%= form_for(@bday, :validate => true) do |f| %>
+  <% if @bday.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bday.errors.count, "error") %> prohibited this bday from being saved:</h2>
+
+      <ul>
+        <% @bday.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :my_date %>
+    <br/>
+    <%= f.text_field :my_date, :validate => true %>
+  </div>
+  <script type="text/javascript">
+    $("#bday_my_date").datepicker({
+      onClose: function(dateText, inst) {
+        $(inst.input).focusout();
+      }
+    });
+  </script>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
